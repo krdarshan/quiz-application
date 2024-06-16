@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart EV Charging Station</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="password"], input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+    .service-options {
+        list-style-type: none;
+        padding: 0;
+    }
+    .service-options li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .service-options li:last-child {
+        border-bottom: none;
+    }
+    .payment-details {
+        text-align: center;
+    }
+    .payment-details img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" name="vehicleNumber" placeholder="Enter Vehicle Number" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<div class="container" id="serviceOptions" style="display: none;">
+    <h2>Service Options</h2>
+    <ul class="service-options">
+        <li>Option 1: Service description and details</li>
+        <li>Option 2: Service description and details</li>
+        <li>Option 3: Service description and details</li>
+    </ul>
+    <p>Amount to be charged: $XX.XX</p>
+    <button id="payButton">Pay</button>
+</div>
+
+<div class="container" id="paymentDetails" style="display: none;">
+    <h2>Payment Details</h2>
+    <div class="payment-details">
+        <p>Scan the QR code to complete the payment.</p>
+        <!-- Placeholder for QR code image -->
+        <img src="qr-code-placeholder.png" alt="QR Code">
+        <p>Once payment is successful, your vehicle will start charging.</p>
+    </div>
+</div>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+    const serviceOptions = document.getElementById('serviceOptions');
+    const paymentDetails = document.getElementById('paymentDetails');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Perform login validation here
+        // For demo purposes, show service options after successful login
+        serviceOptions.style.display = 'block';
+    });
+
+    document.getElementById('payButton').addEventListener('click', function() {
+        // Perform payment processing here
+        // For demo purposes, show payment details after clicking Pay
+        paymentDetails.style.display = 'block';
+    });
+</script>
+</body>
+</html>
